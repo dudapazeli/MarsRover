@@ -33,22 +33,32 @@ public class Coordenadas {
 		this.direcao = direcao;
 	}
 	
-	public void mover(Direcao direcao){
-		switch(direcao){
+	public void mover(){
+		Direcao direcaoAtual = getDirecao();
+		switch(direcaoAtual){
 		case NORTE:
 			setPontoY(pontoY + 1);
 			break;
 		case SUL:
-			setPontoY(pontoY - 1);
+			if(pontoY > 0){
+				setPontoY(pontoY - 1);
+			}
 			break;
 		case LESTE:
 			setPontoX(pontoX + 1);
 			break;
 		case OESTE:
-			setPontoX(pontoX - 1);
+			if(pontoX > 0){
+				setPontoX(pontoX - 1);
+			}
 			break;
 			
 		}
+	}
+	
+	public void rotacionar(int direcaoValor){
+		Direcao direcaoAtual = getDirecao();
+		int direcaoRotacionar = (4 + direcaoAtual.getValor() + direcaoValor) % 4;
 	}
 	
 	
