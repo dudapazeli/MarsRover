@@ -1,6 +1,6 @@
-package com.zup.marsrover;
+package marsRover;
 
-public enum Direcao {
+public enum DirecaoEnum {
 	
 	NORTE(0, 'N'),
 	OESTE(1, 'O'),
@@ -11,7 +11,7 @@ public enum Direcao {
 	private char chave;
 	
 	
-	private Direcao(int valor, char chave) {
+	private DirecaoEnum(int valor, char chave) {
 		this.chave = chave;
 		this.valor = valor;
 	}
