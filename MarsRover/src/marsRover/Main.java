@@ -19,6 +19,14 @@ public class Main {
 		rover.comandos("MMRMMRMRRM");
 		coordenadas2 = rover.getCoordenadas();
 		System.out.println(coordenadas2.getPontoX() + " " + coordenadas2.getPontoY() + " " + coordenadas2.getDirecao().getChave());
+		
+		
+		DirecaoEnum direcao3 = DirecaoEnum.NORTE;
+		Coordenadas coordenadas3 = new Coordenadas(3, 2, direcao3, 6, 5);	
+		rover.setCoordenadas(coordenadas3);
+		rover.comandos("MMRMMRMRRM");
+		coordenadas3 = rover.getCoordenadas();
+		System.out.println(coordenadas3.getPontoX() + " " + coordenadas3.getPontoY() + " " + coordenadas3.getDirecao().getChave());
 	}
 
 }

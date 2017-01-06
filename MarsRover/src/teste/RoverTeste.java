@@ -1,13 +1,15 @@
 package teste;
-import org.junit.Assert;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import marsRover.Coordenadas;
 import marsRover.DirecaoEnum;
 import marsRover.Rover;
-
-import static org.assertj.core.api.Assertions.*;
 
 public class RoverTeste {
 	
@@ -20,6 +22,8 @@ public class RoverTeste {
 	private int maxPontoY;
 	private Rover rover;
 	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
 	@Before
 	public void beforeCoordenadasTeste(){
 		pontoX =3;
@@ -27,7 +31,10 @@ public class RoverTeste {
 		maxPontoX = 6;
 		maxPontoY = 5;
 		coordenadas = new Coordenadas(pontoX, pontoY, direcao, maxPontoX, maxPontoY);
+		rover = new Rover();
 		rover.setCoordenadas(coordenadas);
+		
+		 System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
@@ -37,32 +44,42 @@ public class RoverTeste {
 	
 	@Test
 	public void testaComandoRoverRotacionarEsquerda(){
+		DirecaoEnum direcaoEsperada = DirecaoEnum.OESTE;
 		rover.moverRover('L');
-		assertThat(rover.getCoordenadas()).isEqualToComparingFieldByField(coordenadas);
+		assertThat(rover.getCoordenadas().getDirecao()).isEqualTo(direcaoEsperada);
 	}
 	
 	@Test
 	public void testaComandoRoverRotacionarDireita(){
+		DirecaoEnum direcaoEsperada = DirecaoEnum.LESTE;
 		rover.moverRover('R');
-		assertThat(rover.getCoordenadas()).isEqualToComparingFieldByField(coordenadas);
+		assertThat(rover.getCoordenadas().getDirecao()).isEqualTo(direcaoEsperada);
 	}
 	
 	@Test
 	public void testaComandoRoverMover(){
+		int pontoYEsperado = pontoY + 1;
 		rover.moverRover('M');
-		assertThat(rover.getCoordenadas()).isEqualToComparingFieldByField(coordenadas);
+		assertThat(rover.getCoordenadas().getPontoY()).isEqualTo(pontoYEsperado);
 	}
+	
 	
 	@Test
 	public void testaComandoRoverComandoInexistente(){
-		rover.moverRover('X');
-		assertThat(rover.getCoordenadas()).isEqualToComparingFieldByField(coordenadas);
+		rover.moverRover('A');
+		System.out.println(outContent.toString());
+		assertThat("Comando não capturado pelo Rover".equals(outContent.toString()));
 	}
 	
 	@Test
 	public void testaComandoRoverReceberMultiplosComandos(){
+		int pontoXEsperado = 5;
+		int pontoYEsperado = 4;
+		DirecaoEnum direcao = DirecaoEnum.NORTE;
 		rover.comandos("MMRMMRMRRM");
-		assertThat(rover.getCoordenadas()).isEqualToComparingFieldByField(coordenadas);
+		assertThat(rover.getCoordenadas().getPontoX()).isEqualTo(pontoXEsperado);
+		assertThat(rover.getCoordenadas().getPontoY()).isEqualTo(pontoYEsperado);
+		assertThat(rover.getCoordenadas().getDirecao()).isEqualTo(direcao);
 	}
 	
 

@@ -38,7 +38,7 @@ public class CoordenadasTeste {
 	@Test
 	public void testaMoverRoverXFrente(){
 		coordenadas.setDirecao(DirecaoEnum.LESTE);
-		int pontoEsperado = pontoX + 1;
+		int pontoEsperado = pontoX +1;
 		coordenadas.mover();
 		assertThat(coordenadas.getPontoX()).isEqualTo(pontoEsperado);	
 	}
