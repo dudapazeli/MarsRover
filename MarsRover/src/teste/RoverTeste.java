@@ -68,7 +68,7 @@ public class RoverTeste {
 	public void testaComandoRoverComandoInexistente(){
 		rover.moverRover('A');
 		System.out.println(outContent.toString());
-		assertThat("Comando não capturado pelo Rover".equals(outContent.toString()));
+		assertThat("Comando nao capturado pelo Rover".equals(outContent.toString()));
 	}
 	
 	@Test

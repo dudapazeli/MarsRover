@@ -3,7 +3,6 @@ package marsRover;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Rover rover = new Rover();
 		DirecaoEnum direcao = DirecaoEnum.NORTE;
 		Coordenadas coordenadas = new Coordenadas(1, 2, direcao, 5, 5);	

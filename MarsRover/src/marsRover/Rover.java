@@ -36,7 +36,7 @@ public class Rover {
 				getCoordenadas().rotacionar(-1);
 				break;
 			default:
-				System.out.println("Comando não capturado pelo Rover");
+				System.out.println("Comando nao capturado pelo Rover");
 				break;
 		}
 	}

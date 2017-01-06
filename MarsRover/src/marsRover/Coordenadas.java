@@ -58,22 +58,29 @@ public class Coordenadas {
 		case NORTE:
 			if(getPontoY() < getPontoYMax()){
 				setPontoY(pontoY + 1);
+			}else{
+				setPontoY(pontoYMax);
 			}
 			break;
 		case SUL:
 			if(getPontoY() > 0){
 				setPontoY(pontoY - 1);
+			}else{
+				setPontoY(0);
 			}
 			break;
 		case LESTE:
 			if(getPontoX() < getPontoXMax()){
 				setPontoX(pontoX + 1);
-			}
-			
+			}else{
+				setPontoX(pontoXMax);
+			}	
 			break;
 		case OESTE:
 			if(getPontoX () > 0){
 				setPontoX(pontoX - 1);
+			}else{
+				setPontoX(0);
 			}
 			break;
 			
