@@ -6,10 +6,15 @@
   <name>MarsRoverMaven</name>
   <dependencies>
 	<dependency>
-	  <groupId>org.assertj</groupId>
-	  <artifactId>assertj-core</artifactId>
-	  <version>3.6.1</version>
-	  <scope>test</scope>
+	  	<groupId>org.assertj</groupId>
+	  	<artifactId>assertj-core</artifactId>
+	  	<version>3.6.1</version>
+	  	<scope>test</scope>
+	</dependency>
+	<dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<version>4.11</version> <!-- Or whatever JUnit you're using. -->
 	</dependency>
   </dependencies>
   <build>
