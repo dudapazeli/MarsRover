@@ -6,12 +6,13 @@ O Problema
 
   
   O problema Mars Rover consiste em fazer o Rover se mover ao redor do grid. 
+  
   Parametros iniciais:
   
   
 * Coordenadas limite do grid (x, y).
-* Coordenadas iniciais da posição do Rover (x, y) e sua direção (N, S, L, 0).
-* Sequência de comandos que descrevem a movimentação do Rover (L - virar esquerda, R - virar direita, M - andar uma posição)
+* Coordenadas iniciais da posição do Rover (x, y) e sua direção (N, S, E, W).
+* Sequência de comandos que descrevem a movimentação do Rover (L - virar esquerda, R - virar direita, M - andar uma posição no grid)
       
 Resultado Esperado:
 
