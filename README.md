@@ -25,7 +25,7 @@ A solução para o problema foi construida utilizando Java e IDE Eclipse com JUn
 
 Execução
 ------------
-Exeução da solução:
+Execução da solução:
 
 A execução foi feita utilizando JAVA_HOME = jdk1.8
 
